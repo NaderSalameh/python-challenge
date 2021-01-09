@@ -1,23 +1,23 @@
 import os, csv 
 
 # path to the budget csv
-budget_csv_path = os.path.join('Resources', 'budget_data.csv')
+csv_path = os.path.join('Resources', 'budget_data.csv')
 
 # reading the cvs file 
-with open(budget_csv_path, 'r') as csvfile:
+with open(csv_path, 'r') as csvfile:
 
     # splitting the data with commas 
-    budget_csv_reader = csv.reader(csvfile, delimiter=',')
+    csv_reader = csv.reader(csvfile, delimiter=',')
 
     #skipping the header
-    next(budget_csv_reader)
+    next(csv_reader)
 
     #Creating my lists
     months = []
     amount = []
 
     # creating a for loop to append to my lists 
-    for row in budget_csv_reader :
+    for row in csv_reader:
         months.append(row[0])
         amount.append(int(row[1]))
 
@@ -35,16 +35,21 @@ with open(budget_csv_path, 'r') as csvfile:
     minValMonth = months[minValIndex + 1] # likewise, doing another offset to find the index since we start from index 1 to find the changes 
 
 
-    print("\n\nFinancial Analysis")
-    print("--.--------.----------.----------.")
-    print(f"Total Months: {len(months)} ")
-    print(f"Total Amount: ${sum(amount)}")
-    print(f"Average Change: ${round(sum(change)/len(change),2)}")
-    print(f"Greatest Increase in Profits: {maxValMonth} (${maxVal}")
-    print(f"Greatest Decrease in Profits: {minValMonth} (${minVal})\n\n")
+# Creating an output text file 
+output_path = os.path.join('Analysis', "Budget_Analysis.txt")
+with open(output_path, 'w', newline='') as textfile:
 
-    
-    
+    textfile.write("Financial Analysis\n")
+    textfile.write("--.--------.----------.\n")
+    textfile.write(f"Total Months: {len(months)}\n\n")
+    textfile.write(f"Total Amount: ${sum(amount)}\n\n")
+    textfile.write(f"Average Change: ${round(sum(change)/len(change),2)}\n\n")
+    textfile.write(f"Greatest Increase in Profits: {maxValMonth} (${maxVal})\n\n")
+    textfile.write(f"Greatest Increase in Profits: {minValMonth} (${minVal})\n\n")
+
+
+
+
 
    
   
