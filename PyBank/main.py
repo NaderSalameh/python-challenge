@@ -34,6 +34,13 @@ with open(csv_path, 'r') as csvfile:
     minValIndex = change.index(minVal)
     minValMonth = months[minValIndex + 1] # likewise, doing another offset to find the index since we start from index 1 to find the changes 
 
+    print("Financial Analysis")
+    print("--.--------.----------.\n")
+    print(f"Total Months: {len(months)}")
+    print(f"Total Amount: ${sum(amount)}")
+    print(f"Average Change: ${round(sum(change)/len(change),2)}")
+    print(f"Greatest Increase in Profits: {maxValMonth} (${maxVal})")
+    print(f"Greatest Increase in Profits: {minValMonth} (${minVal})")
 
 # Creating an output text file 
 output_path = os.path.join('Analysis', "Budget_Analysis.txt")
@@ -46,6 +53,8 @@ with open(output_path, 'w', newline='') as textfile:
     textfile.write(f"Average Change: ${round(sum(change)/len(change),2)}\n\n")
     textfile.write(f"Greatest Increase in Profits: {maxValMonth} (${maxVal})\n\n")
     textfile.write(f"Greatest Increase in Profits: {minValMonth} (${minVal})\n\n")
+
+    
 
 
 
