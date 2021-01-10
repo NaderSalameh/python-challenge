@@ -30,7 +30,16 @@ with open(csv_path, 'r') as csv_file:
     for count in range(len(unique_candidates)): 
         tally.append(0)
 
+    # time to tally up the votes!
+    for count in votes:
+        index = unique_candidates.index(count)
+        tally[index] += 1
+
     print(tally)
+        
+
+    
+        
         
     
 
