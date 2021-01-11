@@ -18,7 +18,6 @@ with open(csv_path, 'r') as csv_file:
     unique_candidates = []
     tally = []
     
-
     # collecting all votes
     for row in csv_reader:
         votes.append(row[2])
