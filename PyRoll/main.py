@@ -57,7 +57,7 @@ with open(output_path, 'w', newline='') as textfile:
     for index in range(len(election_results)):
         if election_results[index][0] == max_votes:
             winner = election_results[index][1]
-        textfile.write(f" {election_results[index][1]}: {(election_results[index][0]/totVotes * 100.000): .3f}% ({election_results[index][0]}) \n")
+        textfile.write(f" {election_results[index][1]}: {(election_results[index][0]/totVotes * 100): .3f}% ({election_results[index][0]}) \n")
         print(f" {election_results[index][1]}: {(election_results[index][0]/totVotes * 100.000): .3f}% ({election_results[index][0]}) ")
 
     textfile.write("\n--.---------------.---------------.----------\n")

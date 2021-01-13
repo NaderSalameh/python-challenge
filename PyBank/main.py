@@ -53,20 +53,3 @@ with open(output_path, 'w', newline='') as textfile:
     textfile.write(f"Average Change: ${round(sum(change)/len(change),2)}\n\n")
     textfile.write(f"Greatest Increase in Profits: {maxValMonth} (${maxVal})\n\n")
     textfile.write(f"Greatest Increase in Profits: {minValMonth} (${minVal})\n\n")
-
-    
-
-
-
-
-
-   
-  
-
-    
-    
-    
-
-
-
-
