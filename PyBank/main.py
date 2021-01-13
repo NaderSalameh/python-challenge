@@ -9,8 +9,8 @@ with open(csv_path, 'r') as csvfile:
     # splitting the data with commas 
     csv_reader = csv.reader(csvfile, delimiter=',')
 
-    #skipping the header
-    next(csv_reader)
+    #storing/skipping the header
+    cvs_header = next(csv_reader)
 
     #Creating my lists
     months = []

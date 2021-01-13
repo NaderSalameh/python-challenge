@@ -9,8 +9,8 @@ with open(csv_path, 'r') as csv_file:
     # splitting the data with commas 
     csv_reader = csv.reader(csv_file, delimiter=',')
 
-    # skipping the header row
-    next(csv_reader)
+    # storing/skipping the header row
+    csv_header = next(csv_reader)
 
     # creating my lists 
     votes = []
@@ -67,13 +67,3 @@ with open(output_path, 'w', newline='') as textfile:
     print("--.---------------.---------------.----------")
     print(f"Winner: {winner}")
     print("--.---------------.---------------.----------")
-
-
-             
-
-
- 
-        
-        
-    
-
